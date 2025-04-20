@@ -30,7 +30,7 @@ All features are managed in a **single HTML file**: `task.html`.
 ## 🔗 Repository Link
 
 <!-- Add your GitHub repository link here -->
-[Click here to view the repository](https://sathiyanarayanan53.github.io/Studentform/)
+[Click here to view the repository](https://sathiyanarayanan53.github.io/Studentform/task.html)
 
 ---
 
