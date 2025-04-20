@@ -1,0 +1,116 @@
+<style>
+    .student-form{
+        width:300px;
+        height: 200px;
+        margin-top: 100px;
+        margin-left: 400px;
+    }
+.student-form td{
+    border: 2px solid black;
+    padding: 5px;
+}
+.container td{
+    border: 2px solid black;
+    padding: 5px;
+}
+.container{
+    margin-top: 50px;
+    margin-left: 330px;
+}
+#btm{
+    background-color: red;
+    color: white;
+
+}
+</style>
+<form >
+    <table class="student-form">
+            <tr>
+                <td colspan="2" style="text-align: center;font-weight: 700;" >STUDENT'S FORM</td>
+            </tr>
+            <tr>
+                <td>NAME</td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td>AGE</td>
+                <td><input type="number" id="age"></td>
+            </tr>
+            <tr>
+                <td>GENDER</td>
+                <td id="gender"> <label><input type="radio" name="gender" value="male">Male<input type="radio" name="gender" value="female" id="">Female</label> </td>
+            </tr>
+            <tr>
+                <td>COURSE</td>
+                <td><select name="course" id="course">
+                    
+                    <option value="FrontEnd">FrontEnd</option>
+                    <option value="BackEnd">BackEnd</option>
+                    <option value="FullStack">FullStack</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>EMAIL</td>
+                <td><input type="email" name="" id="mail" placeholder="enter your mail"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center; background-color: aqua; cursor: pointer;" id="save">Save</td>
+            </tr>
+    </table>
+    <table class="container">
+        <tr>
+            <td>NAME</td>
+            <td>AGE</td>
+            <td>GENDER</td>
+            <td>COURSE</td>
+            <td>EMAIL</td>
+            <td>ACTION</td>
+        </tr>
+    </table>
+</form>
+<script>
+    var names=document.getElementById("name")
+    var age=document.getElementById("age")
+    var gender=document.getElementById("gender")
+    var email=document.getElementById("mail")
+    var container=document.querySelector(".container")
+    var student=document.querySelector(".student-form")
+    var save=document.getElementById("save")
+    function deleteitem(event){
+        event.target.closest("tr").remove()
+        // event.target.parentElement.remove()
+    }
+    save.addEventListener("click",function(){
+    var selectedGender = document.querySelector('input[name="gender"]:checked');
+    var genderValue = selectedGender ? selectedGender.value : "Not specified";
+
+        var tr=document.createElement("tr")
+        
+        var tdname=document.createElement("td")
+        tdname.textContent=names.value
+        
+        var tdage=document.createElement("td")
+        tdage.textContent=age.value
+        
+        var tdgender=document.createElement("td")
+        tdgender.textContent=genderValue
+        
+
+        var tdcourse= document.createElement("td")
+        tdcourse.textContent=course.value
+
+        var tdgmail=document.createElement("td")
+        tdgmail.textContent=email.value
+
+        var tdaction=document.createElement("td")
+        tdaction.innerHTML='<button onclick="deleteitem(event)" id="btm" > delete</button>'
+     
+
+        tr.append(tdname,tdage,tdgender,tdcourse,tdgmail,tdaction);
+        container.appendChild(tr)
+    })
+
+     
+</script>
+
+
